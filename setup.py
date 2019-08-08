@@ -28,9 +28,6 @@ def find_version(*paths):
 with codecs.open("requirements.txt") as f:
     REQUIREMENTS = f.read().splitlines()
 
-with codecs.open("extras_requirements.json", "r") as f:
-    EXTRAS_REQUIREMENTS = json.load(f)
-
 DESCRIPTION = "Forecasting the future level of sales for a certain " \
               "chain of stores."
 LONG_DESCRIPTION = read("README.md")
@@ -42,7 +39,6 @@ setup(
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
     install_requires=REQUIREMENTS,
-    extras_require=EXTRAS_REQUIREMENTS,
     packages=find_packages("."),
     zip_safe=True
 )
